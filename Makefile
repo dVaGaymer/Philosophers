@@ -6,11 +6,11 @@
 #    By: alopez-g <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/25 01:42:35 by alopez-g          #+#    #+#              #
-#    Updated: 2022/11/17 18:56:31 by alopez-g         ###   ########.fr        #
+#    Updated: 2022/11/17 20:04:27 by alopez-g         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME	=	philo
+NAME		=	philo
 
 #----- HEADER -----
 H_DIR	=	include
@@ -48,10 +48,16 @@ $(OBJ_DIR):
 $(LIBFT):
 	@$(MAKE) -sC $(LIBFT_DIR)
 
-$(NAME): $(OBJ) $(LIBFT)
+$(NAME): $(filter-out obj/bonus/%.o, $(OBJ)) $(LIBFT)
 	@echo "$(GREEN) Compilation Successfull! $(NC)"
 	@echo "$(YELLOW) Linking... $(NC)"
-	@$(CC) $(LIB_FLAGS) $(OBJ) -o $@
+	$(CC) $(LIB_FLAGS) $(filter-out obj/bonus/%.o, $(OBJ)) -o $@
+	@echo "$(GREEN) Ready! $(NC)"
+
+bonus: $(filter obj/bonus/%.o, $(OBJ)) $(LIBFT)
+	@echo "$(GREEN) Compilation Successfull! $(NC)"
+	@echo "$(YELLOW) Linking... $(NC)"
+	@$(CC) $(LIB_FLAGS) $(filter obj/bonus/%.o, $(OBJ)) -o $(NAME)_$@
 	@echo "$(GREEN) Ready! $(NC)"
 
 clean:
@@ -62,18 +68,22 @@ fclean: clean
 	@$(MAKE) fclean -sC $(LIBFT_DIR)
 	@$(RM) -rf $(OBJ_DIR)
 	@$(RM) $(NAME)
+	@$(RM) $(NAME)_bonus
 	@echo "$(RED) Objects removed $(NC)"
 
 re: fclean all
 
+n:
+	norminette
+
 #----- IMPICIT RULES -----
 $(addprefix $(OBJ_DIR)/, %.o):	$(addprefix $(SRC_DIR)/, %.c) $(H)
-	$(CC) $(C_FLAGS) $< -o $@
+	@$(CC) $(C_FLAGS) $< -o $@
 .PHONY: clean fclean re all
 
 #----- UTILS -----
-RED				= \033[0;31m
-CYAN			= \033[0;36m
-GREEN 			= \033[1;32m
-YELLOW 			= \033[1;33m
-NC 				= \033[0m
+RED				=	\033[0;31m
+CYAN			=	\033[0;36m
+GREEN 			=	\033[1;32m
+YELLOW 			=	\033[1;33m
+NC 				=	\033[0m
