@@ -1,26 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   philo_args.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alopez-g <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/17 17:50:44 by alopez-g          #+#    #+#             */
-/*   Updated: 2022/11/17 23:52:18 by alopez-g         ###   ########.fr       */
+/*   Created: 2022/11/17 22:47:26 by alopez-g          #+#    #+#             */
+/*   Updated: 2022/11/17 23:51:53 by alopez-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "main.h"
+#include "philo_args.h"
 
-int	main(int argc, char **argv)
+void	philo_args_print(t_philo_args p)
 {
-	t_philo_args	philo;
-	t_error			err;
-
-	printf("~philo\n\n");
-	err = parser_parse(argc, argv, &philo);
-	if (SUCCESS != err)
-		return (err);
-	philo_args_print(philo);
-	return (0);
+	printf("number_of_philosophers: %u\n", p.nop);
+	printf("time_to_die: %u\n", p.ttd);
+	printf("time_to_eat: %u\n", p.tte);
+	printf("time_to_sleep: %u\n", p.tts);
+	if (p.notepme)
+		printf("number_of_times_each_philosopher_must_eat: %u\n", p.notepme);
 }

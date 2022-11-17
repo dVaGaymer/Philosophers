@@ -1,26 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   main.h                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alopez-g <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/17 17:50:44 by alopez-g          #+#    #+#             */
-/*   Updated: 2022/11/17 23:52:18 by alopez-g         ###   ########.fr       */
+/*   Created: 2022/11/17 22:11:05 by alopez-g          #+#    #+#             */
+/*   Updated: 2022/11/17 22:36:12 by alopez-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "main.h"
+#ifndef MAIN_H
+# define MAIN_H
 
-int	main(int argc, char **argv)
-{
-	t_philo_args	philo;
-	t_error			err;
+# include <stdio.h>
+# include "error.h"
+# include "parser.h"
 
-	printf("~philo\n\n");
-	err = parser_parse(argc, argv, &philo);
-	if (SUCCESS != err)
-		return (err);
-	philo_args_print(philo);
-	return (0);
-}
+#endif

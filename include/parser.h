@@ -1,26 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   parser.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alopez-g <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/17 17:50:44 by alopez-g          #+#    #+#             */
-/*   Updated: 2022/11/17 23:52:18 by alopez-g         ###   ########.fr       */
+/*   Created: 2022/11/17 21:34:30 by alopez-g          #+#    #+#             */
+/*   Updated: 2022/11/17 23:48:46 by alopez-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "main.h"
+#ifndef PARSER_H
+# define PARSER_H
 
-int	main(int argc, char **argv)
-{
-	t_philo_args	philo;
-	t_error			err;
+# include "libft.h"
+# include "parser.h"
+# include "error.h"
+# include "philo_args.h"
 
-	printf("~philo\n\n");
-	err = parser_parse(argc, argv, &philo);
-	if (SUCCESS != err)
-		return (err);
-	philo_args_print(philo);
-	return (0);
-}
+t_error	parser_parse(int argc, char **argv, t_philo_args *err);
+
+#endif

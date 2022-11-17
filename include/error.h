@@ -1,26 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   error.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alopez-g <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/17 17:50:44 by alopez-g          #+#    #+#             */
-/*   Updated: 2022/11/17 23:52:18 by alopez-g         ###   ########.fr       */
+/*   Created: 2022/11/17 22:06:57 by alopez-g          #+#    #+#             */
+/*   Updated: 2022/11/17 22:12:46 by alopez-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "main.h"
+#ifndef ERROR_H
+# define ERROR_H
 
-int	main(int argc, char **argv)
+typedef enum	e_error
 {
-	t_philo_args	philo;
-	t_error			err;
-
-	printf("~philo\n\n");
-	err = parser_parse(argc, argv, &philo);
-	if (SUCCESS != err)
-		return (err);
-	philo_args_print(philo);
-	return (0);
-}
+	ERROR = -1,
+	SUCCESS = 0
+}				t_error;
+#endif

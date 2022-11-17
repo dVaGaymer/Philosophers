@@ -1,26 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   philo_args.h                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alopez-g <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/17 17:50:44 by alopez-g          #+#    #+#             */
-/*   Updated: 2022/11/17 23:52:18 by alopez-g         ###   ########.fr       */
+/*   Created: 2022/11/17 22:16:26 by alopez-g          #+#    #+#             */
+/*   Updated: 2022/11/17 23:46:13 by alopez-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "main.h"
+#ifndef PHILO_H
+# define PHILO_H
 
-int	main(int argc, char **argv)
+# include <stdio.h>
+
+typedef struct	s_philo_args
 {
-	t_philo_args	philo;
-	t_error			err;
+	unsigned int	nop;
+	unsigned int	ttd;
+	unsigned int	tte;
+	unsigned int	tts;
+	unsigned int	notepme;
+}				t_philo_args;
 
-	printf("~philo\n\n");
-	err = parser_parse(argc, argv, &philo);
-	if (SUCCESS != err)
-		return (err);
-	philo_args_print(philo);
-	return (0);
-}
+void	philo_args_print(t_philo_args philo);
+
+#endif
