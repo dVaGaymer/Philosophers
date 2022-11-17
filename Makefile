@@ -6,7 +6,7 @@
 #    By: alopez-g <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/25 01:42:35 by alopez-g          #+#    #+#              #
-#    Updated: 2022/11/17 20:04:27 by alopez-g         ###   ########.fr        #
+#    Updated: 2022/11/17 20:05:34 by alopez-g         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -51,7 +51,7 @@ $(LIBFT):
 $(NAME): $(filter-out obj/bonus/%.o, $(OBJ)) $(LIBFT)
 	@echo "$(GREEN) Compilation Successfull! $(NC)"
 	@echo "$(YELLOW) Linking... $(NC)"
-	$(CC) $(LIB_FLAGS) $(filter-out obj/bonus/%.o, $(OBJ)) -o $@
+	@$(CC) $(LIB_FLAGS) $(filter-out obj/bonus/%.o, $(OBJ)) -o $@
 	@echo "$(GREEN) Ready! $(NC)"
 
 bonus: $(filter obj/bonus/%.o, $(OBJ)) $(LIBFT)
