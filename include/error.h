@@ -6,29 +6,34 @@
 /*   By: alopez-g <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/17 22:06:57 by alopez-g          #+#    #+#             */
-/*   Updated: 2022/11/18 15:26:26 by alopez-g         ###   ########.fr       */
+/*   Updated: 2022/11/18 16:34:09 by al7aro-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef ERROR_H
 # define ERROR_H
 
+# include "macro.h"
+
 typedef enum e_error
 {
 	ERROR = -1,
 	SUCCESS = 0,
-	NEGATIVE = 1,
-	NAN = 2,
-	INVALID_NUMBER = 3
+	INOA = 1,
+	INVALID_RANGE = 2,
+	NAN = 3,
 }			t_error;
 
 typedef enum e_philo_args_type
 {
 	NOP = 0,
-	TTD = 3,
-	TTE = 6,
-	TTS = 9,
-	NOTEPME = 12
-}			t_philo_arg_type;
+	TTD = 2,
+	TTE = 4,
+	TTS = 6,
+	NOTEPME = 8
+}			t_philo_args_type;
+
+void	error_set_error(int *err, int pos);
+t_bool	error_get_error(int err, int pos);
 
 #endif

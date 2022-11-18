@@ -1,0 +1,1026 @@
+[
+ {
+  "directory": "/Users/al7aro/Development/42/rank03/Philosophers",
+  "arguments": [
+   "gcc",
+   "-Iinclude",
+   "-Isrc/lib/libft/includes",
+   "-c",
+   "-Wall",
+   "-Wextra",
+   "-Werror",
+   "src/main.c",
+   "-o",
+   "obj/main.o"
+  ],
+  "file": "src/main.c"
+ },
+ {
+  "directory": "/Users/al7aro/Development/42/rank03/Philosophers",
+  "arguments": [
+   "gcc",
+   "-Iinclude",
+   "-Isrc/lib/libft/includes",
+   "-c",
+   "-Wall",
+   "-Wextra",
+   "-Werror",
+   "src/parser/parser.c",
+   "-o",
+   "obj/parser/parser.o"
+  ],
+  "file": "src/parser/parser.c"
+ },
+ {
+  "directory": "/Users/al7aro/Development/42/rank03/Philosophers",
+  "arguments": [
+   "gcc",
+   "-Iinclude",
+   "-Isrc/lib/libft/includes",
+   "-c",
+   "-Wall",
+   "-Wextra",
+   "-Werror",
+   "src/philo_args/philo_args.c",
+   "-o",
+   "obj/philo_args/philo_args.o"
+  ],
+  "file": "src/philo_args/philo_args.c"
+ },
+ {
+  "directory": "/Users/al7aro/Development/42/rank03/Philosophers/src/lib/libft",
+  "arguments": [
+   "gcc",
+   "-Wall",
+   "-Werror",
+   "-Wextra",
+   "-I",
+   "includes",
+   "-c",
+   "src/ft_atof.c",
+   "-o",
+   "src/ft_atof.o"
+  ],
+  "file": "src/ft_atof.c"
+ },
+ {
+  "directory": "/Users/al7aro/Development/42/rank03/Philosophers/src/lib/libft",
+  "arguments": [
+   "gcc",
+   "-Wall",
+   "-Werror",
+   "-Wextra",
+   "-I",
+   "includes",
+   "-c",
+   "src/ft_atoi.c",
+   "-o",
+   "src/ft_atoi.o"
+  ],
+  "file": "src/ft_atoi.c"
+ },
+ {
+  "directory": "/Users/al7aro/Development/42/rank03/Philosophers/src/lib/libft",
+  "arguments": [
+   "gcc",
+   "-Wall",
+   "-Werror",
+   "-Wextra",
+   "-I",
+   "includes",
+   "-c",
+   "src/ft_bzero.c",
+   "-o",
+   "src/ft_bzero.o"
+  ],
+  "file": "src/ft_bzero.c"
+ },
+ {
+  "directory": "/Users/al7aro/Development/42/rank03/Philosophers/src/lib/libft",
+  "arguments": [
+   "gcc",
+   "-Wall",
+   "-Werror",
+   "-Wextra",
+   "-I",
+   "includes",
+   "-c",
+   "src/ft_calloc.c",
+   "-o",
+   "src/ft_calloc.o"
+  ],
+  "file": "src/ft_calloc.c"
+ },
+ {
+  "directory": "/Users/al7aro/Development/42/rank03/Philosophers/src/lib/libft",
+  "arguments": [
+   "gcc",
+   "-Wall",
+   "-Werror",
+   "-Wextra",
+   "-I",
+   "includes",
+   "-c",
+   "src/ft_ftoa.c",
+   "-o",
+   "src/ft_ftoa.o"
+  ],
+  "file": "src/ft_ftoa.c"
+ },
+ {
+  "directory": "/Users/al7aro/Development/42/rank03/Philosophers/src/lib/libft",
+  "arguments": [
+   "gcc",
+   "-Wall",
+   "-Werror",
+   "-Wextra",
+   "-I",
+   "includes",
+   "-c",
+   "src/ft_isalnum.c",
+   "-o",
+   "src/ft_isalnum.o"
+  ],
+  "file": "src/ft_isalnum.c"
+ },
+ {
+  "directory": "/Users/al7aro/Development/42/rank03/Philosophers/src/lib/libft",
+  "arguments": [
+   "gcc",
+   "-Wall",
+   "-Werror",
+   "-Wextra",
+   "-I",
+   "includes",
+   "-c",
+   "src/ft_isalpha.c",
+   "-o",
+   "src/ft_isalpha.o"
+  ],
+  "file": "src/ft_isalpha.c"
+ },
+ {
+  "directory": "/Users/al7aro/Development/42/rank03/Philosophers/src/lib/libft",
+  "arguments": [
+   "gcc",
+   "-Wall",
+   "-Werror",
+   "-Wextra",
+   "-I",
+   "includes",
+   "-c",
+   "src/ft_isascii.c",
+   "-o",
+   "src/ft_isascii.o"
+  ],
+  "file": "src/ft_isascii.c"
+ },
+ {
+  "directory": "/Users/al7aro/Development/42/rank03/Philosophers/src/lib/libft",
+  "arguments": [
+   "gcc",
+   "-Wall",
+   "-Werror",
+   "-Wextra",
+   "-I",
+   "includes",
+   "-c",
+   "src/ft_isdigit.c",
+   "-o",
+   "src/ft_isdigit.o"
+  ],
+  "file": "src/ft_isdigit.c"
+ },
+ {
+  "directory": "/Users/al7aro/Development/42/rank03/Philosophers/src/lib/libft",
+  "arguments": [
+   "gcc",
+   "-Wall",
+   "-Werror",
+   "-Wextra",
+   "-I",
+   "includes",
+   "-c",
+   "src/ft_isprint.c",
+   "-o",
+   "src/ft_isprint.o"
+  ],
+  "file": "src/ft_isprint.c"
+ },
+ {
+  "directory": "/Users/al7aro/Development/42/rank03/Philosophers/src/lib/libft",
+  "arguments": [
+   "gcc",
+   "-Wall",
+   "-Werror",
+   "-Wextra",
+   "-I",
+   "includes",
+   "-c",
+   "src/ft_itoa.c",
+   "-o",
+   "src/ft_itoa.o"
+  ],
+  "file": "src/ft_itoa.c"
+ },
+ {
+  "directory": "/Users/al7aro/Development/42/rank03/Philosophers/src/lib/libft",
+  "arguments": [
+   "gcc",
+   "-Wall",
+   "-Werror",
+   "-Wextra",
+   "-I",
+   "includes",
+   "-c",
+   "src/ft_lstadd_back_bonus.c",
+   "-o",
+   "src/ft_lstadd_back_bonus.o"
+  ],
+  "file": "src/ft_lstadd_back_bonus.c"
+ },
+ {
+  "directory": "/Users/al7aro/Development/42/rank03/Philosophers/src/lib/libft",
+  "arguments": [
+   "gcc",
+   "-Wall",
+   "-Werror",
+   "-Wextra",
+   "-I",
+   "includes",
+   "-c",
+   "src/ft_lstadd_front_bonus.c",
+   "-o",
+   "src/ft_lstadd_front_bonus.o"
+  ],
+  "file": "src/ft_lstadd_front_bonus.c"
+ },
+ {
+  "directory": "/Users/al7aro/Development/42/rank03/Philosophers/src/lib/libft",
+  "arguments": [
+   "gcc",
+   "-Wall",
+   "-Werror",
+   "-Wextra",
+   "-I",
+   "includes",
+   "-c",
+   "src/ft_lstclear_bonus.c",
+   "-o",
+   "src/ft_lstclear_bonus.o"
+  ],
+  "file": "src/ft_lstclear_bonus.c"
+ },
+ {
+  "directory": "/Users/al7aro/Development/42/rank03/Philosophers/src/lib/libft",
+  "arguments": [
+   "gcc",
+   "-Wall",
+   "-Werror",
+   "-Wextra",
+   "-I",
+   "includes",
+   "-c",
+   "src/ft_lstdelone_bonus.c",
+   "-o",
+   "src/ft_lstdelone_bonus.o"
+  ],
+  "file": "src/ft_lstdelone_bonus.c"
+ },
+ {
+  "directory": "/Users/al7aro/Development/42/rank03/Philosophers/src/lib/libft",
+  "arguments": [
+   "gcc",
+   "-Wall",
+   "-Werror",
+   "-Wextra",
+   "-I",
+   "includes",
+   "-c",
+   "src/ft_lstdelrange_bonus.c",
+   "-o",
+   "src/ft_lstdelrange_bonus.o"
+  ],
+  "file": "src/ft_lstdelrange_bonus.c"
+ },
+ {
+  "directory": "/Users/al7aro/Development/42/rank03/Philosophers/src/lib/libft",
+  "arguments": [
+   "gcc",
+   "-Wall",
+   "-Werror",
+   "-Wextra",
+   "-I",
+   "includes",
+   "-c",
+   "src/ft_lstiter_bonus.c",
+   "-o",
+   "src/ft_lstiter_bonus.o"
+  ],
+  "file": "src/ft_lstiter_bonus.c"
+ },
+ {
+  "directory": "/Users/al7aro/Development/42/rank03/Philosophers/src/lib/libft",
+  "arguments": [
+   "gcc",
+   "-Wall",
+   "-Werror",
+   "-Wextra",
+   "-I",
+   "includes",
+   "-c",
+   "src/ft_lstlast_bonus.c",
+   "-o",
+   "src/ft_lstlast_bonus.o"
+  ],
+  "file": "src/ft_lstlast_bonus.c"
+ },
+ {
+  "directory": "/Users/al7aro/Development/42/rank03/Philosophers/src/lib/libft",
+  "arguments": [
+   "gcc",
+   "-Wall",
+   "-Werror",
+   "-Wextra",
+   "-I",
+   "includes",
+   "-c",
+   "src/ft_lstmap_bonus.c",
+   "-o",
+   "src/ft_lstmap_bonus.o"
+  ],
+  "file": "src/ft_lstmap_bonus.c"
+ },
+ {
+  "directory": "/Users/al7aro/Development/42/rank03/Philosophers/src/lib/libft",
+  "arguments": [
+   "gcc",
+   "-Wall",
+   "-Werror",
+   "-Wextra",
+   "-I",
+   "includes",
+   "-c",
+   "src/ft_lstnew_bonus.c",
+   "-o",
+   "src/ft_lstnew_bonus.o"
+  ],
+  "file": "src/ft_lstnew_bonus.c"
+ },
+ {
+  "directory": "/Users/al7aro/Development/42/rank03/Philosophers/src/lib/libft",
+  "arguments": [
+   "gcc",
+   "-Wall",
+   "-Werror",
+   "-Wextra",
+   "-I",
+   "includes",
+   "-c",
+   "src/ft_lstsize_bonus.c",
+   "-o",
+   "src/ft_lstsize_bonus.o"
+  ],
+  "file": "src/ft_lstsize_bonus.c"
+ },
+ {
+  "directory": "/Users/al7aro/Development/42/rank03/Philosophers/src/lib/libft",
+  "arguments": [
+   "gcc",
+   "-Wall",
+   "-Werror",
+   "-Wextra",
+   "-I",
+   "includes",
+   "-c",
+   "src/ft_memccpy.c",
+   "-o",
+   "src/ft_memccpy.o"
+  ],
+  "file": "src/ft_memccpy.c"
+ },
+ {
+  "directory": "/Users/al7aro/Development/42/rank03/Philosophers/src/lib/libft",
+  "arguments": [
+   "gcc",
+   "-Wall",
+   "-Werror",
+   "-Wextra",
+   "-I",
+   "includes",
+   "-c",
+   "src/ft_memchr.c",
+   "-o",
+   "src/ft_memchr.o"
+  ],
+  "file": "src/ft_memchr.c"
+ },
+ {
+  "directory": "/Users/al7aro/Development/42/rank03/Philosophers/src/lib/libft",
+  "arguments": [
+   "gcc",
+   "-Wall",
+   "-Werror",
+   "-Wextra",
+   "-I",
+   "includes",
+   "-c",
+   "src/ft_memcmp.c",
+   "-o",
+   "src/ft_memcmp.o"
+  ],
+  "file": "src/ft_memcmp.c"
+ },
+ {
+  "directory": "/Users/al7aro/Development/42/rank03/Philosophers/src/lib/libft",
+  "arguments": [
+   "gcc",
+   "-Wall",
+   "-Werror",
+   "-Wextra",
+   "-I",
+   "includes",
+   "-c",
+   "src/ft_memcpy.c",
+   "-o",
+   "src/ft_memcpy.o"
+  ],
+  "file": "src/ft_memcpy.c"
+ },
+ {
+  "directory": "/Users/al7aro/Development/42/rank03/Philosophers/src/lib/libft",
+  "arguments": [
+   "gcc",
+   "-Wall",
+   "-Werror",
+   "-Wextra",
+   "-I",
+   "includes",
+   "-c",
+   "src/ft_memmove.c",
+   "-o",
+   "src/ft_memmove.o"
+  ],
+  "file": "src/ft_memmove.c"
+ },
+ {
+  "directory": "/Users/al7aro/Development/42/rank03/Philosophers/src/lib/libft",
+  "arguments": [
+   "gcc",
+   "-Wall",
+   "-Werror",
+   "-Wextra",
+   "-I",
+   "includes",
+   "-c",
+   "src/ft_memset.c",
+   "-o",
+   "src/ft_memset.o"
+  ],
+  "file": "src/ft_memset.c"
+ },
+ {
+  "directory": "/Users/al7aro/Development/42/rank03/Philosophers/src/lib/libft",
+  "arguments": [
+   "gcc",
+   "-Wall",
+   "-Werror",
+   "-Wextra",
+   "-I",
+   "includes",
+   "-c",
+   "src/ft_putchar_fd.c",
+   "-o",
+   "src/ft_putchar_fd.o"
+  ],
+  "file": "src/ft_putchar_fd.c"
+ },
+ {
+  "directory": "/Users/al7aro/Development/42/rank03/Philosophers/src/lib/libft",
+  "arguments": [
+   "gcc",
+   "-Wall",
+   "-Werror",
+   "-Wextra",
+   "-I",
+   "includes",
+   "-c",
+   "src/ft_putendl_fd.c",
+   "-o",
+   "src/ft_putendl_fd.o"
+  ],
+  "file": "src/ft_putendl_fd.c"
+ },
+ {
+  "directory": "/Users/al7aro/Development/42/rank03/Philosophers/src/lib/libft",
+  "arguments": [
+   "gcc",
+   "-Wall",
+   "-Werror",
+   "-Wextra",
+   "-I",
+   "includes",
+   "-c",
+   "src/ft_putnbr_fd.c",
+   "-o",
+   "src/ft_putnbr_fd.o"
+  ],
+  "file": "src/ft_putnbr_fd.c"
+ },
+ {
+  "directory": "/Users/al7aro/Development/42/rank03/Philosophers/src/lib/libft",
+  "arguments": [
+   "gcc",
+   "-Wall",
+   "-Werror",
+   "-Wextra",
+   "-I",
+   "includes",
+   "-c",
+   "src/ft_putstr_fd.c",
+   "-o",
+   "src/ft_putstr_fd.o"
+  ],
+  "file": "src/ft_putstr_fd.c"
+ },
+ {
+  "directory": "/Users/al7aro/Development/42/rank03/Philosophers/src/lib/libft",
+  "arguments": [
+   "gcc",
+   "-Wall",
+   "-Werror",
+   "-Wextra",
+   "-I",
+   "includes",
+   "-c",
+   "src/ft_split.c",
+   "-o",
+   "src/ft_split.o"
+  ],
+  "file": "src/ft_split.c"
+ },
+ {
+  "directory": "/Users/al7aro/Development/42/rank03/Philosophers/src/lib/libft",
+  "arguments": [
+   "gcc",
+   "-Wall",
+   "-Werror",
+   "-Wextra",
+   "-I",
+   "includes",
+   "-c",
+   "src/ft_strchr.c",
+   "-o",
+   "src/ft_strchr.o"
+  ],
+  "file": "src/ft_strchr.c"
+ },
+ {
+  "directory": "/Users/al7aro/Development/42/rank03/Philosophers/src/lib/libft",
+  "arguments": [
+   "gcc",
+   "-Wall",
+   "-Werror",
+   "-Wextra",
+   "-I",
+   "includes",
+   "-c",
+   "src/ft_strdup.c",
+   "-o",
+   "src/ft_strdup.o"
+  ],
+  "file": "src/ft_strdup.c"
+ },
+ {
+  "directory": "/Users/al7aro/Development/42/rank03/Philosophers/src/lib/libft",
+  "arguments": [
+   "gcc",
+   "-Wall",
+   "-Werror",
+   "-Wextra",
+   "-I",
+   "includes",
+   "-c",
+   "src/ft_strjoin.c",
+   "-o",
+   "src/ft_strjoin.o"
+  ],
+  "file": "src/ft_strjoin.c"
+ },
+ {
+  "directory": "/Users/al7aro/Development/42/rank03/Philosophers/src/lib/libft",
+  "arguments": [
+   "gcc",
+   "-Wall",
+   "-Werror",
+   "-Wextra",
+   "-I",
+   "includes",
+   "-c",
+   "src/ft_strlcat.c",
+   "-o",
+   "src/ft_strlcat.o"
+  ],
+  "file": "src/ft_strlcat.c"
+ },
+ {
+  "directory": "/Users/al7aro/Development/42/rank03/Philosophers/src/lib/libft",
+  "arguments": [
+   "gcc",
+   "-Wall",
+   "-Werror",
+   "-Wextra",
+   "-I",
+   "includes",
+   "-c",
+   "src/ft_strlcpy.c",
+   "-o",
+   "src/ft_strlcpy.o"
+  ],
+  "file": "src/ft_strlcpy.c"
+ },
+ {
+  "directory": "/Users/al7aro/Development/42/rank03/Philosophers/src/lib/libft",
+  "arguments": [
+   "gcc",
+   "-Wall",
+   "-Werror",
+   "-Wextra",
+   "-I",
+   "includes",
+   "-c",
+   "src/ft_strlen.c",
+   "-o",
+   "src/ft_strlen.o"
+  ],
+  "file": "src/ft_strlen.c"
+ },
+ {
+  "directory": "/Users/al7aro/Development/42/rank03/Philosophers/src/lib/libft",
+  "arguments": [
+   "gcc",
+   "-Wall",
+   "-Werror",
+   "-Wextra",
+   "-I",
+   "includes",
+   "-c",
+   "src/ft_strmapi.c",
+   "-o",
+   "src/ft_strmapi.o"
+  ],
+  "file": "src/ft_strmapi.c"
+ },
+ {
+  "directory": "/Users/al7aro/Development/42/rank03/Philosophers/src/lib/libft",
+  "arguments": [
+   "gcc",
+   "-Wall",
+   "-Werror",
+   "-Wextra",
+   "-I",
+   "includes",
+   "-c",
+   "src/ft_strncmp.c",
+   "-o",
+   "src/ft_strncmp.o"
+  ],
+  "file": "src/ft_strncmp.c"
+ },
+ {
+  "directory": "/Users/al7aro/Development/42/rank03/Philosophers/src/lib/libft",
+  "arguments": [
+   "gcc",
+   "-Wall",
+   "-Werror",
+   "-Wextra",
+   "-I",
+   "includes",
+   "-c",
+   "src/ft_strnstr.c",
+   "-o",
+   "src/ft_strnstr.o"
+  ],
+  "file": "src/ft_strnstr.c"
+ },
+ {
+  "directory": "/Users/al7aro/Development/42/rank03/Philosophers/src/lib/libft",
+  "arguments": [
+   "gcc",
+   "-Wall",
+   "-Werror",
+   "-Wextra",
+   "-I",
+   "includes",
+   "-c",
+   "src/ft_strrchr.c",
+   "-o",
+   "src/ft_strrchr.o"
+  ],
+  "file": "src/ft_strrchr.c"
+ },
+ {
+  "directory": "/Users/al7aro/Development/42/rank03/Philosophers/src/lib/libft",
+  "arguments": [
+   "gcc",
+   "-Wall",
+   "-Werror",
+   "-Wextra",
+   "-I",
+   "includes",
+   "-c",
+   "src/ft_strtrim.c",
+   "-o",
+   "src/ft_strtrim.o"
+  ],
+  "file": "src/ft_strtrim.c"
+ },
+ {
+  "directory": "/Users/al7aro/Development/42/rank03/Philosophers/src/lib/libft",
+  "arguments": [
+   "gcc",
+   "-Wall",
+   "-Werror",
+   "-Wextra",
+   "-I",
+   "includes",
+   "-c",
+   "src/ft_substr.c",
+   "-o",
+   "src/ft_substr.o"
+  ],
+  "file": "src/ft_substr.c"
+ },
+ {
+  "directory": "/Users/al7aro/Development/42/rank03/Philosophers/src/lib/libft",
+  "arguments": [
+   "gcc",
+   "-Wall",
+   "-Werror",
+   "-Wextra",
+   "-I",
+   "includes",
+   "-c",
+   "src/ft_tolower.c",
+   "-o",
+   "src/ft_tolower.o"
+  ],
+  "file": "src/ft_tolower.c"
+ },
+ {
+  "directory": "/Users/al7aro/Development/42/rank03/Philosophers/src/lib/libft",
+  "arguments": [
+   "gcc",
+   "-Wall",
+   "-Werror",
+   "-Wextra",
+   "-I",
+   "includes",
+   "-c",
+   "src/ft_toupper.c",
+   "-o",
+   "src/ft_toupper.o"
+  ],
+  "file": "src/ft_toupper.c"
+ },
+ {
+  "directory": "/Users/al7aro/Development/42/rank03/Philosophers/src/lib/libft",
+  "arguments": [
+   "gcc",
+   "-Wall",
+   "-Werror",
+   "-Wextra",
+   "-I",
+   "includes",
+   "-c",
+   "src/ft_uitoab.c",
+   "-o",
+   "src/ft_uitoab.o"
+  ],
+  "file": "src/ft_uitoab.c"
+ },
+ {
+  "directory": "/Users/al7aro/Development/42/rank03/Philosophers/src/lib/libft",
+  "arguments": [
+   "gcc",
+   "-Wall",
+   "-Werror",
+   "-Wextra",
+   "-I",
+   "includes",
+   "-c",
+   "src/ft_ultoa.c",
+   "-o",
+   "src/ft_ultoa.o"
+  ],
+  "file": "src/ft_ultoa.c"
+ },
+ {
+  "directory": "/Users/al7aro/Development/42/rank03/Philosophers/src/lib/libft",
+  "arguments": [
+   "gcc",
+   "-Wall",
+   "-Werror",
+   "-Wextra",
+   "-I",
+   "includes",
+   "-c",
+   "src/ft_ultoab.c",
+   "-o",
+   "src/ft_ultoab.o"
+  ],
+  "file": "src/ft_ultoab.c"
+ },
+ {
+  "directory": "/Users/al7aro/Development/42/rank03/Philosophers/src/lib/libft",
+  "arguments": [
+   "gcc",
+   "-Wall",
+   "-Werror",
+   "-Wextra",
+   "-I",
+   "includes",
+   "-c",
+   "src/ft_printf/apply_utils.c",
+   "-o",
+   "src/ft_printf/apply_utils.o"
+  ],
+  "file": "src/ft_printf/apply_utils.c"
+ },
+ {
+  "directory": "/Users/al7aro/Development/42/rank03/Philosophers/src/lib/libft",
+  "arguments": [
+   "gcc",
+   "-Wall",
+   "-Werror",
+   "-Wextra",
+   "-I",
+   "includes",
+   "-c",
+   "src/ft_printf/c_flags.c",
+   "-o",
+   "src/ft_printf/c_flags.o"
+  ],
+  "file": "src/ft_printf/c_flags.c"
+ },
+ {
+  "directory": "/Users/al7aro/Development/42/rank03/Philosophers/src/lib/libft",
+  "arguments": [
+   "gcc",
+   "-Wall",
+   "-Werror",
+   "-Wextra",
+   "-I",
+   "includes",
+   "-c",
+   "src/ft_printf/d_flags.c",
+   "-o",
+   "src/ft_printf/d_flags.o"
+  ],
+  "file": "src/ft_printf/d_flags.c"
+ },
+ {
+  "directory": "/Users/al7aro/Development/42/rank03/Philosophers/src/lib/libft",
+  "arguments": [
+   "gcc",
+   "-Wall",
+   "-Werror",
+   "-Wextra",
+   "-I",
+   "includes",
+   "-c",
+   "src/ft_printf/ft_printf.c",
+   "-o",
+   "src/ft_printf/ft_printf.o"
+  ],
+  "file": "src/ft_printf/ft_printf.c"
+ },
+ {
+  "directory": "/Users/al7aro/Development/42/rank03/Philosophers/src/lib/libft",
+  "arguments": [
+   "gcc",
+   "-Wall",
+   "-Werror",
+   "-Wextra",
+   "-I",
+   "includes",
+   "-c",
+   "src/ft_printf/ft_printf_utils.c",
+   "-o",
+   "src/ft_printf/ft_printf_utils.o"
+  ],
+  "file": "src/ft_printf/ft_printf_utils.c"
+ },
+ {
+  "directory": "/Users/al7aro/Development/42/rank03/Philosophers/src/lib/libft",
+  "arguments": [
+   "gcc",
+   "-Wall",
+   "-Werror",
+   "-Wextra",
+   "-I",
+   "includes",
+   "-c",
+   "src/ft_printf/p_flags.c",
+   "-o",
+   "src/ft_printf/p_flags.o"
+  ],
+  "file": "src/ft_printf/p_flags.c"
+ },
+ {
+  "directory": "/Users/al7aro/Development/42/rank03/Philosophers/src/lib/libft",
+  "arguments": [
+   "gcc",
+   "-Wall",
+   "-Werror",
+   "-Wextra",
+   "-I",
+   "includes",
+   "-c",
+   "src/ft_printf/s_flags.c",
+   "-o",
+   "src/ft_printf/s_flags.o"
+  ],
+  "file": "src/ft_printf/s_flags.c"
+ },
+ {
+  "directory": "/Users/al7aro/Development/42/rank03/Philosophers/src/lib/libft",
+  "arguments": [
+   "gcc",
+   "-Wall",
+   "-Werror",
+   "-Wextra",
+   "-I",
+   "includes",
+   "-c",
+   "src/ft_printf/struct_utils.c",
+   "-o",
+   "src/ft_printf/struct_utils.o"
+  ],
+  "file": "src/ft_printf/struct_utils.c"
+ },
+ {
+  "directory": "/Users/al7aro/Development/42/rank03/Philosophers/src/lib/libft",
+  "arguments": [
+   "gcc",
+   "-Wall",
+   "-Werror",
+   "-Wextra",
+   "-I",
+   "includes",
+   "-c",
+   "src/ft_printf/u_flags.c",
+   "-o",
+   "src/ft_printf/u_flags.o"
+  ],
+  "file": "src/ft_printf/u_flags.c"
+ },
+ {
+  "directory": "/Users/al7aro/Development/42/rank03/Philosophers/src/lib/libft",
+  "arguments": [
+   "gcc",
+   "-Wall",
+   "-Werror",
+   "-Wextra",
+   "-I",
+   "includes",
+   "-c",
+   "src/ft_printf/x_flags.c",
+   "-o",
+   "src/ft_printf/x_flags.o"
+  ],
+  "file": "src/ft_printf/x_flags.c"
+ },
+ {
+  "directory": "/Users/al7aro/Development/42/rank03/Philosophers",
+  "arguments": [
+   "gcc",
+   "-Iinclude",
+   "-Isrc/lib/libft/includes",
+   "-c",
+   "-Wall",
+   "-Wextra",
+   "-Werror",
+   "src/log/log.c",
+   "-o",
+   "obj/log/log.o"
+  ],
+  "file": "src/log/log.c"
+ },
+ {
+  "directory": "/Users/al7aro/Development/42/rank03/Philosophers",
+  "arguments": [
+   "gcc",
+   "-Iinclude",
+   "-Isrc/lib/libft/includes",
+   "-c",
+   "-Wall",
+   "-Wextra",
+   "-Werror",
+   "src/error/error.c",
+   "-o",
+   "obj/error/error.o"
+  ],
+  "file": "src/error/error.c"
+ }
+]

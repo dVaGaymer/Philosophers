@@ -1,23 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   parser.h                                           :+:      :+:    :+:   */
+/*   error.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alopez-g <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: al7aro <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/17 21:34:30 by alopez-g          #+#    #+#             */
-/*   Updated: 2022/11/18 16:29:27 by al7aro-g         ###   ########.fr       */
+/*   Created: 2022/11/18 15:49:51 by al7aro            #+#    #+#             */
+/*   Updated: 2022/11/18 15:56:29 by al7aro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PARSER_H
-# define PARSER_H
+#include "error.h"
 
-# include "libft.h"
-# include "error.h"
-# include "philo_args.h"
+void	error_set_error(int *err, int pos)
+{
+	*err = *err | (1 << pos);
+}
 
-t_error	parser_parse(int argc, char **argv, t_philo_args *err);
-void	parser_print_usage(char **argv, int err);
-
-#endif
+t_bool	error_get_error(int err, int pos)
+{
+	return (!!(err & (1 << pos)));
+}
