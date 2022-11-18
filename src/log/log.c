@@ -1,38 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   philo_args.h                                       :+:      :+:    :+:   */
+/*   log.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alopez-g <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/17 22:16:26 by alopez-g          #+#    #+#             */
-/*   Updated: 2022/11/18 13:49:22 by alopez-g         ###   ########.fr       */
+/*   Created: 2022/11/18 13:09:11 by alopez-g          #+#    #+#             */
+/*   Updated: 2022/11/18 16:34:54 by al7aro-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PHILO_ARGS_H
-# define PHILO_ARGS_H
+#include "log.h"
 
-# include <stdio.h>
-
-typedef struct s_philo_args
+void	log_state(int philon, int time, t_philo_action action)
 {
-	int	nop;
-	int	ttd;
-	int	tte;
-	int	tts;
-	int	notepme;
-}				t_philo_args;
-
-typedef enum s_philo_act
-{
-	TAKE_FORK,
-	EAT,
-	SLEEP,
-	THINK,
-	DIED
-}				t_philo_action;
-
-void	philo_args_print(t_philo_args philo);
-
-#endif
+	printf("%d %d ", time, philon);
+	if (TAKE_FORK == action)
+		printf("has taken a fork");
+	else if (EAT == action)
+		printf("is eating");
+	else if (SLEEP == action)
+		printf("is sleeping");
+	else if (THINK == action)
+		printf("is thinking");
+	else if (DIED == action)
+		printf("died");
+	printf("\n");
+}

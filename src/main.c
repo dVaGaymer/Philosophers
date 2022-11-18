@@ -6,7 +6,7 @@
 /*   By: alopez-g <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/17 17:50:44 by alopez-g          #+#    #+#             */
-/*   Updated: 2022/11/18 13:02:16 by alopez-g         ###   ########.fr       */
+/*   Updated: 2022/11/18 16:36:45 by al7aro-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,9 @@ int	main(int argc, char **argv)
 
 	err = parser_parse(argc, argv, &philo);
 	if (SUCCESS != err)
+	{
+		error_print_usage(argv, err);
 		return (err);
-	philo_args_print(philo);
-	return (0);
+	}
+	return (SUCCESS);
 }

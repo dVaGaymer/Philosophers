@@ -6,44 +6,51 @@
 /*   By: alopez-g <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/17 21:34:11 by alopez-g          #+#    #+#             */
-/*   Updated: 2022/11/18 13:02:53 by alopez-g         ###   ########.fr       */
+/*   Updated: 2022/11/18 16:45:23 by alopez-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "parser.h"
+#include "error.h"
 
-static const char	*str_valid(const char *str)
+static int	str_valid(const char *str, t_philo_args_type t, int *err)
 {
+	int		num;
 	size_t	i;
 
+	(void)err;
+	(void)t;
 	i = -1;
-	while (*(str + ++i))
+	while (*(str + ++i) || (!*(str + i) && 0 == i))
 	{
-		if (!ft_isdigit(*(str + i)))
-			return (NULL);
+		if ((!ft_isdigit(*(str + i)) && *(str + i) != '-')
+			|| (*(str + i) == '-' && i != 0))
+		{
+			error_set_error(err, t + NAN);
+			return (0);
+		}
 	}
-	return (str);
+	num = ft_atoi(str);
+	if (num <= 0)
+		error_set_error(err, t + INVALID_RANGE);
+	return (num);
 }
 
 t_error	parser_parse(int argc, char **argv, t_philo_args *ret)
 {
 	t_philo_args	philo;
+	int				err;
 
+	err = 0;
 	philo.notepme = 0;
 	if (6 == argc)
-	{
-		philo.notepme = ft_atoi(str_valid(*(argv + 5)));
-		if (philo.notepme <= 0)
-			return (ERROR);
-	}
+		philo.notepme = str_valid(*(argv + 5), NOTEPME, &err);
 	else if (5 != argc)
-		return (ERROR);
-	philo.nop = ft_atoi(str_valid(*(argv + 1)));
-	philo.ttd = ft_atoi(str_valid(*(argv + 2)));
-	philo.tte = ft_atoi(str_valid(*(argv + 3)));
-	philo.tts = ft_atoi(str_valid(*(argv + 4)));
-	if (philo.nop <= 0 || philo.ttd <= 0 || philo.tte <= 0 || philo.tts <= 0)
-		return (ERROR);
+		return (INOA);
+	philo.nop = str_valid(*(argv + 1), NOP, &err);
+	philo.ttd = str_valid(*(argv + 2), TTD, &err);
+	philo.tte = str_valid(*(argv + 3), TTE, &err);
+	philo.tts = str_valid(*(argv + 4), TTS, &err);
 	*ret = philo;
-	return (SUCCESS);
+	return (err);
 }
