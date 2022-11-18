@@ -6,7 +6,7 @@
 #    By: alopez-g <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/25 01:42:35 by alopez-g          #+#    #+#              #
-#    Updated: 2022/11/17 22:29:58 by alopez-g         ###   ########.fr        #
+#    Updated: 2022/11/18 17:12:33 by alopez-g         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -37,7 +37,8 @@ LIBFT		=	$(LIBFT_DIR)/$(LIBFT_NAME)
 CC			=	gcc
 H_FLAGS		=	-I$(H_DIR) -I$(LIBFT_H_DIR)
 C_FLAGS		=	-c -Wall -Wextra -Werror
-LIB_FLAGS	=	-L$(LIBFT_DIR) -lft
+LIB_FLAGS	=	-L$(LIBFT_DIR) -lft \
+				-lpthread
 
 #----- RULES
 all: $(OBJ_DIR) $(NAME)

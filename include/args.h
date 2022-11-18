@@ -1,23 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   philo_args.c                                       :+:      :+:    :+:   */
+/*   args.h                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alopez-g <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/17 22:47:26 by alopez-g          #+#    #+#             */
-/*   Updated: 2022/11/18 11:56:16 by alopez-g         ###   ########.fr       */
+/*   Created: 2022/11/18 18:31:52 by alopez-g          #+#    #+#             */
+/*   Updated: 2022/11/18 21:39:19 by alopez-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "philo_args.h"
+#ifndef ARGS_H
+# define ARGS_H
 
-void	philo_args_print(t_philo_args p)
+typedef struct s_args
 {
-	printf("number_of_philosophers: %d\n", p.nop);
-	printf("time_to_die: %d\n", p.ttd);
-	printf("time_to_eat: %d\n", p.tte);
-	printf("time_to_sleep: %d\n", p.tts);
-	if (p.notepme)
-		printf("number_of_times_each_philosopher_must_eat: %d\n", p.notepme);
-}
+	int		nop;
+	int		ttd;
+	int		tte;
+	int		tts;
+	int		notepme;
+	char	*f1;
+	char	*f2;
+}				t_args;
+
+#endif
