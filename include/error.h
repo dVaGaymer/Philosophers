@@ -6,7 +6,7 @@
 /*   By: alopez-g <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/17 22:06:57 by alopez-g          #+#    #+#             */
-/*   Updated: 2022/11/18 16:34:09 by al7aro-g         ###   ########.fr       */
+/*   Updated: 2022/11/18 16:37:02 by al7aro-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define ERROR_H
 
 # include "macro.h"
+# include <stdio.h>
 
 typedef enum e_error
 {
@@ -35,5 +36,6 @@ typedef enum e_philo_args_type
 
 void	error_set_error(int *err, int pos);
 t_bool	error_get_error(int err, int pos);
+void	error_print_usage(char **argv, int err);
 
 #endif
