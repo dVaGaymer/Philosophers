@@ -1,5 +1,7 @@
 philo
 philo_bonus
+.cache/
+*.json
 
 # Prerequisites
 *.d
