@@ -6,7 +6,7 @@
 /*   By: alopez-g <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/17 17:50:44 by alopez-g          #+#    #+#             */
-/*   Updated: 2022/11/18 22:27:15 by alopez-g         ###   ########.fr       */
+/*   Updated: 2022/11/18 22:32:31 by al7aro-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@ void	*vital_functions(void *param)
 	t_args		args;
 	char		*forks[2];
 
+	(void)args;
 	args = *((t_args *)*((void **)param));
 	*(forks) = (char *)*((void **)param + 1);
 	*(forks + 1) = (char *)*((void **)param + 2);
@@ -27,8 +28,8 @@ void	*vital_functions(void *param)
 
 void	create_threads(t_args args, char *forks, pthread_t *philo)
 {
-	void *param[3];
-	int	n;
+	void	*param[3];
+	int		n;
 
 	*(param) = (void *)&args;
 	n = -1;

@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   philo_table.h                                       :+:      :+:    :+:   */
+/*   philo_table.h                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alopez-g <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/17 22:16:26 by alopez-g          #+#    #+#             */
-/*   Updated: 2022/11/18 21:27:14 by alopez-g         ###   ########.fr       */
+/*   Updated: 2022/11/18 22:31:01 by al7aro-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PHILO_ARGS_H
-# define PHILO_ARGS_H
+#ifndef PHILO_TABLE_H
+# define PHILO_TABLE_H
 
 # include <stdio.h>
 # include <string.h>
