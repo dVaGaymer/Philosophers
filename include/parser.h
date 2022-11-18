@@ -6,7 +6,7 @@
 /*   By: alopez-g <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/17 21:34:30 by alopez-g          #+#    #+#             */
-/*   Updated: 2022/11/17 23:48:46 by alopez-g         ###   ########.fr       */
+/*   Updated: 2022/11/18 15:09:09 by alopez-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,5 +19,6 @@
 # include "philo_args.h"
 
 t_error	parser_parse(int argc, char **argv, t_philo_args *err);
+void	parser_print_usage(void);
 
 #endif

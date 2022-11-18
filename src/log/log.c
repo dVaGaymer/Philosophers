@@ -1,34 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   error.h                                            :+:      :+:    :+:   */
+/*   log.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alopez-g <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/17 22:06:57 by alopez-g          #+#    #+#             */
-/*   Updated: 2022/11/18 15:26:26 by alopez-g         ###   ########.fr       */
+/*   Created: 2022/11/18 13:09:11 by alopez-g          #+#    #+#             */
+/*   Updated: 2022/11/18 15:09:45 by alopez-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ERROR_H
-# define ERROR_H
+#include "log.h"
 
-typedef enum e_error
+void	log_state(int philon, int time, t_philo_action action)
 {
-	ERROR = -1,
-	SUCCESS = 0,
-	NEGATIVE = 1,
-	NAN = 2,
-	INVALID_NUMBER = 3
-}			t_error;
-
-typedef enum e_philo_args_type
-{
-	NOP = 0,
-	TTD = 3,
-	TTE = 6,
-	TTS = 9,
-	NOTEPME = 12
-}			t_philo_arg_type;
-
-#endif
+	printf("%d %d ", time, philon);
+	if (TAKE_FORK == action)
+		printf("has taken a fork");
+	else if (EAT == action)
+		printf("is eating");
+	else if (SLEEP == action)
+		printf("is sleeping");
+	else if (THINK == action)
+		printf("is thinking");
+	else if (DIED == action)
+		printf("died");
+	printf("\n");
+}
