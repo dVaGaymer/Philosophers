@@ -6,7 +6,7 @@
 /*   By: alopez-g <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/17 17:50:44 by alopez-g          #+#    #+#             */
-/*   Updated: 2022/11/17 23:52:18 by alopez-g         ###   ########.fr       */
+/*   Updated: 2022/11/18 13:02:16 by alopez-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@ int	main(int argc, char **argv)
 	t_philo_args	philo;
 	t_error			err;
 
-	printf("~philo\n\n");
 	err = parser_parse(argc, argv, &philo);
 	if (SUCCESS != err)
 		return (err);

@@ -6,7 +6,7 @@
 /*   By: alopez-g <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/25 09:34:07 by alopez-g          #+#    #+#             */
-/*   Updated: 2022/07/24 05:12:31 by alopez-g         ###   ########.fr       */
+/*   Updated: 2022/11/18 13:04:43 by alopez-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ int	ft_atoi(const char *str)
 
 	aux = 0;
 	sign = 1;
+	if (!str)
+		return (0);
 	while (*str == ' ' || *str == '\n' || *str == '\v' || *str == '\t'
 		|| *str == '\r' || *str == '\f')
 		str++;

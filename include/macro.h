@@ -1,19 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   macro.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alopez-g <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/17 20:02:28 by alopez-g          #+#    #+#             */
-/*   Updated: 2022/11/17 20:03:17 by alopez-g         ###   ########.fr       */
+/*   Created: 2022/11/18 11:57:18 by alopez-g          #+#    #+#             */
+/*   Updated: 2022/11/18 13:04:08 by alopez-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#ifndef MACRO_H
+# define MACRO_H
 
-int	main(void)
+typedef enum s_bool
 {
-	printf("~philo_bonus");
-	return (0);
-}
+	TRUE = 1,
+	FALSE = 0
+}			t_bool;
+
+#endif
