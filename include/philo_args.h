@@ -1,37 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   philo_args.h                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alopez-g <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/01/25 09:34:07 by alopez-g          #+#    #+#             */
-/*   Updated: 2022/11/18 13:04:43 by alopez-g         ###   ########.fr       */
+/*   Created: 2022/11/17 22:16:26 by alopez-g          #+#    #+#             */
+/*   Updated: 2022/11/18 13:04:24 by alopez-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_atoi(const char *str)
-{
-	long	aux;
-	int		sign;
+#ifndef PHILO_ARGS_H
+# define PHILO_ARGS_H
 
-	aux = 0;
-	sign = 1;
-	if (!str)
-		return (0);
-	while (*str == ' ' || *str == '\n' || *str == '\v' || *str == '\t'
-		|| *str == '\r' || *str == '\f')
-		str++;
-	if (*str == 43 || *str == 45)
-	{
-		if (*str == 45)
-			sign = -1;
-		str++;
-	}
-	while (*str >= 48 && *str <= 57)
-	{
-		aux = aux * 10 + (*str - 48);
-		str++;
-	}
-	return ((int)(aux * sign));
-}
+# include <stdio.h>
+
+typedef struct s_philo_args
+{
+	int	nop;
+	int	ttd;
+	int	tte;
+	int	tts;
+	int	notepme;
+}				t_philo_args;
+
+void	philo_args_print(t_philo_args philo);
+
+#endif

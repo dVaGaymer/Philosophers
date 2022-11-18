@@ -6,7 +6,7 @@
 #    By: alopez-g <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/25 01:42:35 by alopez-g          #+#    #+#              #
-#    Updated: 2022/11/17 20:05:34 by alopez-g         ###   ########.fr        #
+#    Updated: 2022/11/17 22:29:58 by alopez-g         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,7 +30,7 @@ OBJ		=	$(subst $(SRC_DIR), $(OBJ_DIR), $(SRC:.c=.o))
 	#---- LIBFT -----
 LIBFT_NAME	=	libft.a
 LIBFT_DIR	=	src/lib/libft
-LIBFT_H_DIR	=	$(LIBFT_DIR)/include
+LIBFT_H_DIR	=	$(LIBFT_DIR)/includes
 LIBFT		=	$(LIBFT_DIR)/$(LIBFT_NAME)
 
 #----- FLAGS -----
@@ -78,7 +78,7 @@ n:
 
 #----- IMPICIT RULES -----
 $(addprefix $(OBJ_DIR)/, %.o):	$(addprefix $(SRC_DIR)/, %.c) $(H)
-	@$(CC) $(C_FLAGS) $< -o $@
+	@$(CC) $(H_FLAGS) $(C_FLAGS) $< -o $@
 .PHONY: clean fclean re all
 
 #----- UTILS -----
