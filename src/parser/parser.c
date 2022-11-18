@@ -6,7 +6,7 @@
 /*   By: alopez-g <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/17 21:34:11 by alopez-g          #+#    #+#             */
-/*   Updated: 2022/11/18 16:36:06 by al7aro-g         ###   ########.fr       */
+/*   Updated: 2022/11/18 16:45:23 by alopez-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ static int	str_valid(const char *str, t_philo_args_type t, int *err)
 	(void)err;
 	(void)t;
 	i = -1;
-	while (*(str + ++i))
+	while (*(str + ++i) || (!*(str + i) && 0 == i))
 	{
 		if ((!ft_isdigit(*(str + i)) && *(str + i) != '-')
 			|| (*(str + i) == '-' && i != 0))

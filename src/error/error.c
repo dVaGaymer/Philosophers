@@ -6,7 +6,7 @@
 /*   By: al7aro <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/18 15:49:51 by al7aro            #+#    #+#             */
-/*   Updated: 2022/11/18 16:37:17 by al7aro           ###   ########.fr       */
+/*   Updated: 2022/11/18 16:44:01 by alopez-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,9 @@ t_bool	error_get_error(int err, int pos)
 void	error_print_usage(char **argv, int err)
 {
 	if (error_get_error(err, NOP + NAN))
-		printf("nomber_of_philosophers[%s] not a number\n", *(argv + 1));
+		printf("number_of_philosophers[%s] not a number\n", *(argv + 1));
 	if (error_get_error(err, NOP + INVALID_RANGE))
-		printf("nomber_of_philosophers[%s] not in range\n", *(argv + 1));
+		printf("number_of_philosophers[%s] not in range\n", *(argv + 1));
 	if (error_get_error(err, TTD + NAN))
 		printf("time_to_die[%s] is not a number\n", *(argv + 2));
 	if (error_get_error(err, TTD + INVALID_RANGE))
