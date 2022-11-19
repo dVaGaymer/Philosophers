@@ -6,7 +6,7 @@
 /*   By: alopez-g <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/19 01:14:49 by alopez-g          #+#    #+#             */
-/*   Updated: 2022/11/19 01:38:15 by alopez-g         ###   ########.fr       */
+/*   Updated: 2022/11/19 01:49:52 by alopez-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,9 @@
 
 void	*vital_functions(void *param)
 {
-	t_args		args;
-	char		*forks[2];
+	t_philo	philo;
 
-	args = *((t_args *)*((void **)param));
-	*(forks) = (char *)*((void **)param + 1);
-	*(forks + 1) = (char *)*((void **)param + 2);
+	philo = (t_philo)*((t_philo *)param);
 	free(param);
 	return (NULL);
 }
