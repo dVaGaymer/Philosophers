@@ -6,7 +6,7 @@
 /*   By: alopez-g <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/19 01:14:49 by alopez-g          #+#    #+#             */
-/*   Updated: 2022/11/19 01:49:52 by alopez-g         ###   ########.fr       */
+/*   Updated: 2022/11/19 01:56:53 by alopez-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	*vital_functions(void *param)
 {
 	t_philo	philo;
 
-	philo = (t_philo)*((t_philo *)param);
+	philo = (t_philo)(*((t_philo *)param));
 	free(param);
 	return (NULL);
 }
