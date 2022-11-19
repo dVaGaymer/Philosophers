@@ -6,13 +6,14 @@
 /*   By: alopez-g <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/17 22:47:26 by alopez-g          #+#    #+#             */
-/*   Updated: 2022/11/19 01:32:18 by alopez-g         ###   ########.fr       */
+/*   Updated: 2022/11/19 15:52:26 by alopez-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philo_utils.h"
 
-char	*philo_right_fork(t_args args, char *forks, int index)
+pthread_mutex_t	*philo_right_fork(t_args args,
+		pthread_mutex_t *forks, int index)
 {
 	if (index >= args.nop || index < 0)
 		return (NULL);
@@ -21,26 +22,33 @@ char	*philo_right_fork(t_args args, char *forks, int index)
 	return (forks + index + 1);
 }
 
-char	*philo_left_fork(t_args args, char *forks, int index)
+pthread_mutex_t	*philo_left_fork(t_args args,
+		pthread_mutex_t *forks, int index)
 {
 	if (index >= args.nop || index < 0)
 		return (NULL);
 	return (forks + index);
 }
 
-t_error	philo_table_init(t_args args, char **forks, pthread_t **philo)
+t_error	philo_table_init(t_args *args, pthread_t **philo)
 {
-	*forks = (char *)malloc(sizeof(char) * args.nop);
-	if (!*forks)
+	int	i;
+
+	args->mutex
+		= (pthread_mutex_t *)malloc(sizeof(pthread_mutex_t) * args->nop);
+	if (!args->mutex)
 		return (ERROR);
-	*philo = (pthread_t *)malloc(sizeof(pthread_t) * args.nop);
+	*philo = (pthread_t *)malloc(sizeof(pthread_t) * args->nop);
 	if (!*philo)
 		return (ERROR);
-	memset(*forks, 0, args.nop);
+	i = -1;
+	while (++i < args->nop)
+		pthread_mutex_init(args->mutex, NULL);
 	return (SUCCESS);
 }
 
-t_philo	*philo_create_philo(t_args *args, char *lfork, char *rfork)
+t_philo	*philo_create_philo(t_args *args,
+		pthread_mutex_t *lfork, pthread_mutex_t *rfork, int n)
 {
 	t_philo	*ret;
 
@@ -48,5 +56,6 @@ t_philo	*philo_create_philo(t_args *args, char *lfork, char *rfork)
 	ret->args = args;
 	ret->lfork = lfork;
 	ret->rfork = rfork;
+	ret->id = n;
 	return (ret);
 }

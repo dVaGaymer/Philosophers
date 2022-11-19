@@ -6,7 +6,7 @@
 /*   By: alopez-g <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/17 22:16:26 by alopez-g          #+#    #+#             */
-/*   Updated: 2022/11/19 01:41:28 by alopez-g         ###   ########.fr       */
+/*   Updated: 2022/11/19 15:53:59 by alopez-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,12 @@
 # include "error.h"
 # include "philo.h"
 
-t_error	philo_table_init(t_args args, char **forks, pthread_t **philo);
-char	*philo_right_fork(t_args args, char *forks, int index);
-char	*philo_left_fork(t_args args, char *forks, int index);
-t_philo	*philo_create_philo(t_args *args, char *lfork, char *rfork);
+t_error			philo_table_init(t_args *args, pthread_t **philo);
+pthread_mutex_t	*philo_right_fork(t_args args,
+					pthread_mutex_t *forks, int index);
+pthread_mutex_t	*philo_left_fork(t_args args,
+					pthread_mutex_t *forks, int index);
+t_philo			*philo_create_philo(t_args *args,
+					pthread_mutex_t *lfork, pthread_mutex_t *rfork, int n);
 
 #endif

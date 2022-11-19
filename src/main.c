@@ -6,7 +6,7 @@
 /*   By: alopez-g <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/17 17:50:44 by alopez-g          #+#    #+#             */
-/*   Updated: 2022/11/19 02:46:49 by alopez-g         ###   ########.fr       */
+/*   Updated: 2022/11/19 15:53:28 by alopez-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,9 @@
  * */
 int	main(int argc, char **argv)
 {
-	t_args		args;
-	char		*forks;
-	pthread_t	*philo;
-	t_error		err;
+	t_args			args;
+	pthread_t		*philo;
+	t_error			err;
 
 	err = parser_parse(argc, argv, &args);
 	if (SUCCESS != err)
@@ -31,8 +30,8 @@ int	main(int argc, char **argv)
 		error_print_usage(argv, err);
 		return (err);
 	}
-	if (SUCCESS != philo_table_init(args, &forks, &philo))
+	if (SUCCESS != philo_table_init(&args, &philo))
 		return (ERROR);
-	threads_start(args, forks, philo);
+	threads_start(args, philo);
 	return (SUCCESS);
 }
