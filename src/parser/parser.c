@@ -6,7 +6,7 @@
 /*   By: alopez-g <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/17 21:34:11 by alopez-g          #+#    #+#             */
-/*   Updated: 2022/11/18 18:33:30 by alopez-g         ###   ########.fr       */
+/*   Updated: 2022/11/19 01:20:03 by alopez-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ static int	str_valid(const char *str, t_philo_args_type t, int *err)
 t_error	parser_parse(int argc, char **argv, t_args *ret)
 {
 	t_args	philo;
-	int				err;
+	int		err;
 
 	err = 0;
 	philo.notepme = 0;

@@ -6,7 +6,7 @@
 /*   By: alopez-g <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/17 22:11:05 by alopez-g          #+#    #+#             */
-/*   Updated: 2022/11/18 21:26:51 by alopez-g         ###   ########.fr       */
+/*   Updated: 2022/11/19 01:19:00 by alopez-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,10 @@
 # include <pthread.h>
 # include <stdlib.h>
 
-# include "args.h"
+# include "philo.h"
 # include "error.h"
 # include "parser.h"
-# include "philo_table.h"
+# include "philo_utils.h"
+# include "thread.h"
 
 #endif

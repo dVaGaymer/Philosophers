@@ -1,32 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   thread.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alopez-g <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/17 17:50:44 by alopez-g          #+#    #+#             */
-/*   Updated: 2022/11/19 01:38:43 by alopez-g         ###   ########.fr       */
+/*   Created: 2022/11/19 01:15:09 by alopez-g          #+#    #+#             */
+/*   Updated: 2022/11/19 01:18:55 by alopez-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "main.h"
+#ifndef THREAD_H
+# define THREAD_H
 
-int	main(int argc, char **argv)
-{
-	t_args		args;
-	char		*forks;
-	pthread_t	*philo;
-	t_error		err;
+# include <stdio.h>
+# include <pthread.h>
 
-	err = parser_parse(argc, argv, &args);
-	if (SUCCESS != err)
-	{
-		error_print_usage(argv, err);
-		return (err);
-	}
-	if (SUCCESS != philo_table_init(args, &forks, &philo))
-		return (ERROR);
-	create_threads(args, forks, philo);
-	return (SUCCESS);
-}
+# include "philo.h"
+# include "philo_utils.h"
+
+void	*vital_functions(void *param);
+void	create_threads(t_args args, char *forks, pthread_t *philo);
+
+#endif

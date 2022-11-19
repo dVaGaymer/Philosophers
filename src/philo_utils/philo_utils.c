@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   philo_table.c                                      :+:      :+:    :+:   */
+/*   philo_utils.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alopez-g <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/17 22:47:26 by alopez-g          #+#    #+#             */
-/*   Updated: 2022/11/18 21:27:32 by alopez-g         ###   ########.fr       */
+/*   Updated: 2022/11/19 01:32:18 by alopez-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "philo_table.h"
+#include "philo_utils.h"
 
 char	*philo_right_fork(t_args args, char *forks, int index)
 {
@@ -38,4 +38,15 @@ t_error	philo_table_init(t_args args, char **forks, pthread_t **philo)
 		return (ERROR);
 	memset(*forks, 0, args.nop);
 	return (SUCCESS);
+}
+
+t_philo	*philo_create_philo(t_args *args, char *lfork, char *rfork)
+{
+	t_philo	*ret;
+
+	ret = (t_philo *)malloc(sizeof(t_philo));
+	ret->args = args;
+	ret->lfork = lfork;
+	ret->rfork = rfork;
+	return (ret);
 }
