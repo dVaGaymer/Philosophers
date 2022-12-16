@@ -6,7 +6,7 @@
 /*   By: alopez-g <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/18 18:31:52 by alopez-g          #+#    #+#             */
-/*   Updated: 2022/11/19 15:51:10 by alopez-g         ###   ########.fr       */
+/*   Updated: 2022/12/16 01:58:55 by alopez-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,18 @@
 # define PHILO_H
 
 # include <pthread.h>
+# include <sys/time.h>
 
 typedef struct s_args
 {
+	suseconds_t		init_time;
 	int				nop;
 	int				ttd;
 	int				tte;
 	int				tts;
 	int				notepme;
 	pthread_mutex_t	*mutex;
+	pthread_mutex_t	log_mutex;
 }				t_args;
 
 typedef struct s_philo

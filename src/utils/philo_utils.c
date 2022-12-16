@@ -6,7 +6,7 @@
 /*   By: alopez-g <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/17 22:47:26 by alopez-g          #+#    #+#             */
-/*   Updated: 2022/11/19 15:52:26 by alopez-g         ###   ########.fr       */
+/*   Updated: 2022/12/16 01:59:41 by alopez-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,14 @@ pthread_mutex_t	*philo_left_fork(t_args args,
 	return (forks + index);
 }
 
+void	philo_init_time(t_args *args)
+{
+	struct timeval	t;
+
+	gettimeofday(&t, NULL);
+	args->init_time = t.tv_usec;
+}
+
 t_error	philo_table_init(t_args *args, pthread_t **philo)
 {
 	int	i;
@@ -43,7 +51,9 @@ t_error	philo_table_init(t_args *args, pthread_t **philo)
 		return (ERROR);
 	i = -1;
 	while (++i < args->nop)
-		pthread_mutex_init(args->mutex, NULL);
+		pthread_mutex_init(args->mutex + i, NULL);
+	pthread_mutex_init(&args->log_mutex, NULL);
+	philo_init_time(args);
 	return (SUCCESS);
 }
 
