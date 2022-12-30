@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: alopez-g <marvin@42.fr>                    +#+  +:+       +#+         #
+#    By: alopez-g <alopez-g@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/25 01:42:35 by alopez-g          #+#    #+#              #
-#    Updated: 2022/11/18 17:12:33 by alopez-g         ###   ########.fr        #
+#    Updated: 2022/12/30 23:17:17 by alopez-g         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -36,9 +36,10 @@ LIBFT		=	$(LIBFT_DIR)/$(LIBFT_NAME)
 #----- FLAGS -----
 CC			=	gcc
 H_FLAGS		=	-I$(H_DIR) -I$(LIBFT_H_DIR)
-C_FLAGS		=	-c -Wall -Wextra -Werror
+C_FLAGS		=	-c -Wall -Wextra -Werror -fsanitize=thread
 LIB_FLAGS	=	-L$(LIBFT_DIR) -lft \
-				-lpthread
+				-lpthread \
+				-fsanitize=thread
 
 #----- RULES
 all: $(OBJ_DIR) $(NAME)

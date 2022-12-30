@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   thread.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alopez-g <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: alopez-g <alopez-g@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/19 01:15:09 by alopez-g          #+#    #+#             */
-/*   Updated: 2022/11/19 15:42:13 by alopez-g         ###   ########.fr       */
+/*   Updated: 2022/12/30 12:44:24 by alopez-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,13 @@
 # include "error.h"
 # include "philo_utils.h"
 
+typedef struct s_thread_param
+{
+	t_args	*args;
+	t_philo	*philo;
+}				t_thread_param;
+
 void	*vital_functions(void *param);
-void	threads_start(t_args args, pthread_t *philo);
+void	threads_start(t_args *args, t_philo **philo);
 
 #endif

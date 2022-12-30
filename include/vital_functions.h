@@ -1,23 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   log.h                                              :+:      :+:    :+:   */
+/*   vital_functions.h                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alopez-g <alopez-g@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/18 13:08:49 by alopez-g          #+#    #+#             */
-/*   Updated: 2022/12/30 22:20:02 by alopez-g         ###   ########.fr       */
+/*   Created: 2022/11/17 22:06:57 by alopez-g          #+#    #+#             */
+/*   Updated: 2022/12/30 18:10:36 by alopez-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LOG_H
-# define LOG_H
+#ifndef VITAL_FUNCTIONS_H
+# define VITAL_FUNCTIONS_H
 
-# include "log.h"
+# include <stdio.h>
+# include <pthread.h>
+
+# include "thread.h"
 # include "philo.h"
+# include "log.h"
+# include "error.h"
 # include "philo_utils.h"
 
-void	log_args_print(t_args philo);
-void	log_state(t_args *args, t_philo *philo, t_philo_action action);
+void	*vital_functions(void *param);
 
 #endif

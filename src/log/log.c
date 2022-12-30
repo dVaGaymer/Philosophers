@@ -3,33 +3,39 @@
 /*                                                        :::      ::::::::   */
 /*   log.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alopez-g <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: alopez-g <alopez-g@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/18 13:09:11 by alopez-g          #+#    #+#             */
-/*   Updated: 2022/12/16 02:01:22 by alopez-g         ###   ########.fr       */
+/*   Updated: 2022/12/30 23:38:17 by alopez-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "log.h"
 
-void	log_state(t_args *args, int philon, t_philo_action action)
+void	log_state(t_args *args, t_philo *philo, t_philo_action action)
 {
-	struct timeval t;
+	struct timeval	t;
+	suseconds_t		time;
+
 	gettimeofday(&t, NULL);
-	pthread_mutex_lock(&args->log_mutex);
-	printf("%d %d ", t.tv_usec / 1000, philon);
-	if (TAKE_FORK == action)
-		printf("has taken a fork");
+	time = (philo_get_utime() - args->init_time) * US_TO_MS;
+	pthread_mutex_lock(&args->common_mutex);
+	if (TAKE_LFORK == action)
+		printf(RED"%d %d has taken left fork", time, philo->id);
+	else if (TAKE_RFORK == action)
+		printf(RED"%d %d has taken right fork", time, philo->id);
 	else if (EAT == action)
-		printf("is eating");
+		printf(YELLOW"%d %d is eating", time, philo->id);
 	else if (SLEEP == action)
-		printf("is sleeping");
+		printf(CYAN"%d %d is sleeping", time, philo->id);
 	else if (THINK == action)
-		printf("is thinking");
+		printf(MAGENTA"%d %d is thinking", time, philo->id);
 	else if (DIED == action)
-		printf("died");
+		printf("%d %d died [delay: %d]", time, philo->id,
+			(philo_get_utime() * US_TO_MS - philo->time_of_last_eat)
+			- args->ttd);
 	printf("\n");
-	pthread_mutex_unlock(&args->log_mutex);
+	pthread_mutex_unlock(&args->common_mutex);
 }
 
 void	log_args_print(t_args p)

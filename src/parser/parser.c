@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parser.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alopez-g <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: alopez-g <alopez-g@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/17 21:34:11 by alopez-g          #+#    #+#             */
-/*   Updated: 2022/12/16 00:57:12 by alopez-g         ###   ########.fr       */
+/*   Updated: 2022/12/30 23:36:32 by alopez-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,19 +38,21 @@ static int	str_valid(const char *str, t_philo_args_type t, int *err)
 
 t_error	parser_parse(int argc, char **argv, t_args *ret)
 {
-	t_args	philo;
+	t_args	args;
 	int		err;
 
 	err = 0;
-	philo.notepme = 0;
+	args.notepme = 0;
 	if (6 == argc)
-		philo.notepme = str_valid(*(argv + 5), NOTEPME, &err);
+		args.notepme = str_valid(*(argv + 5), NOTEPME, &err);
 	else if (5 != argc)
 		return (INOA);
-	philo.nop = str_valid(*(argv + 1), NOP, &err);
-	philo.ttd = str_valid(*(argv + 2), TTD, &err);
-	philo.tte = str_valid(*(argv + 3), TTE, &err);
-	philo.tts = str_valid(*(argv + 4), TTS, &err);
-	*ret = philo;
+	args.nop = str_valid(*(argv + 1), NOP, &err);
+	args.ttd = str_valid(*(argv + 2), TTD, &err);
+	args.tte = str_valid(*(argv + 3), TTE, &err);
+	args.tts = str_valid(*(argv + 4), TTS, &err);
+	args.run = TRUE;
+	args.init_time = philo_get_utime();
+	*ret = args;
 	return (err);
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   philo_utils.h                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alopez-g <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: alopez-g <alopez-g@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/17 22:16:26 by alopez-g          #+#    #+#             */
-/*   Updated: 2022/12/16 01:42:15 by alopez-g         ###   ########.fr       */
+/*   Updated: 2022/12/30 23:34:45 by alopez-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,12 +24,13 @@
 # include "error.h"
 # include "philo.h"
 
-t_error			philo_table_init(t_args *args, pthread_t **philo);
-pthread_mutex_t	*philo_right_fork(t_args args,
+t_error			philo_init(t_args *args, t_philo **philo);
+pthread_mutex_t	*philo_right_fork(t_args *args,
 					pthread_mutex_t *forks, int index);
-pthread_mutex_t	*philo_left_fork(t_args args,
+pthread_mutex_t	*philo_left_fork(t_args *args,
 					pthread_mutex_t *forks, int index);
-t_philo			*philo_create_philo(t_args *args,
-					pthread_mutex_t *lfork, pthread_mutex_t *rfork, int n);
+t_philo			philo_create_philo(pthread_mutex_t *lfork,
+					pthread_mutex_t *rfork, int n);
+suseconds_t		philo_get_utime(void);
 
 #endif

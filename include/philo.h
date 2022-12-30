@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   philo.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alopez-g <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: alopez-g <alopez-g@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/18 18:31:52 by alopez-g          #+#    #+#             */
-/*   Updated: 2022/12/16 01:58:55 by alopez-g         ###   ########.fr       */
+/*   Updated: 2022/12/30 23:35:53 by alopez-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,29 +16,35 @@
 # include <pthread.h>
 # include <sys/time.h>
 
+# include "macro.h"
+
 typedef struct s_args
 {
 	suseconds_t		init_time;
+	t_bool			run;
 	int				nop;
 	int				ttd;
 	int				tte;
 	int				tts;
 	int				notepme;
-	pthread_mutex_t	*mutex;
-	pthread_mutex_t	log_mutex;
+	pthread_mutex_t	common_mutex;
 }				t_args;
 
 typedef struct s_philo
 {
-	t_args			*args;
-	pthread_mutex_t	*lfork;
-	pthread_mutex_t	*rfork;
 	int				id;
+	int				eat_times;
+	int				time_of_last_eat;
+	pthread_t		thread;
+	pthread_mutex_t	*rfork;
+	pthread_mutex_t	*lfork;
 }				t_philo;
 
 typedef enum s_philo_action
 {
-	TAKE_FORK,
+	FINISHED_ALL_MEALS = -1,
+	TAKE_LFORK,
+	TAKE_RFORK,
 	EAT,
 	SLEEP,
 	THINK,
