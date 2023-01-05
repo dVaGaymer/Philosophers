@@ -6,7 +6,7 @@
 #    By: alopez-g <alopez-g@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/25 01:42:35 by alopez-g          #+#    #+#              #
-#    Updated: 2023/01/05 14:36:35 by alopez-g         ###   ########.fr        #
+#    Updated: 2023/01/05 20:35:53 by alopez-g         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,13 +14,29 @@ NAME		=	philo
 
 #----- HEADER -----
 H_DIR	=	include
-H		=	$(wildcard $(H_DIR)/*.h)
+H		=	include/error.h \
+			include/log.h \
+			include/macro.h \
+			include/main.h \
+			include/parser.h \
+			include/philo.h \
+			include/philo_actions.h \
+			include/philo_utils.h \
+			include/thread.h \
+			include/vital_functions.h
 H_NODIR	=	$(notdir $(H))
 
 #----- SRC ----
 SRC_DIR	=	src
-SRC		=	$(wildcard $(SRC_DIR)/*.c)
-SRC		+=	$(wildcard $(SRC_DIR)/**/*.c)
+SRC		=	src/actions/philo_actions.c \
+			src/error/error.c \
+			src/log/log.c \
+			src/main.c \
+			src/parser/parser.c \
+			src/thread/mutex_utils.c \
+			src/thread/thread.c \
+			src/utils/philo_utils.c \
+			src/vital_funcs/vital_functions.c
 
 #----- OBJ -----
 OBJ_DIR	=	obj
@@ -36,9 +52,10 @@ LIBFT		=	$(LIBFT_DIR)/$(LIBFT_NAME)
 #----- FLAGS -----
 CC			=	gcc
 H_FLAGS		=	-I$(H_DIR) -I$(LIBFT_H_DIR)
-C_FLAGS		=	-Ofast -c -Wall -Wextra -Werror -fsanitize=thread
+C_FLAGS		=	-c -Wall -Wextra -Werror
+				-fsanitize=thread
 LIB_FLAGS	=	-L$(LIBFT_DIR) -lft \
-				-lpthread \
+				-lpthread
 				-fsanitize=thread
 
 #----- RULES
@@ -59,7 +76,7 @@ $(NAME): $(filter-out obj/bonus/%.o, $(OBJ)) $(LIBFT)
 bonus: $(filter obj/bonus/%.o, $(OBJ)) $(LIBFT)
 	@echo "$(GREEN) Compilation Successfull! $(NC)"
 	@echo "$(YELLOW) Linking... $(NC)"
-	@$(CC) -Ofast $(LIB_FLAGS) $(filter obj/bonus/%.o, $(OBJ)) -o $(NAME)_$@
+	@$(CC) $(LIB_FLAGS) $(filter obj/bonus/%.o, $(OBJ)) -o $(NAME)_$@
 	@echo "$(GREEN) Ready! $(NC)"
 
 clean:
