@@ -3,6 +3,8 @@ philo_bonus
 .cache/
 *.json
 
+socrates
+
 # Prerequisites
 *.d
 

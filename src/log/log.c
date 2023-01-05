@@ -6,7 +6,7 @@
 /*   By: alopez-g <alopez-g@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/18 13:09:11 by alopez-g          #+#    #+#             */
-/*   Updated: 2023/01/05 19:38:32 by alopez-g         ###   ########.fr       */
+/*   Updated: 2023/01/05 19:46:18 by alopez-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,17 +24,17 @@ void	log_state(t_args *args, t_philo *philo, t_philo_action action)
 	}
 	time = (philo_get_mstime() - args->init_time);
 	if (TAKE_LFORK == action)
-		printf(RED"%d %d has taken left fork\n", time, philo->id);
+		printf("%d %d has taken left fork\n", time, philo->id);
 	else if (TAKE_RFORK == action)
-		printf(RED"%d %d has taken right fork\n", time, philo->id);
+		printf("%d %d has taken right fork\n", time, philo->id);
 	else if (EAT == action)
-		printf(YELLOW"%d %d is eating\n", time, philo->id);
+		printf("%d %d is eating\n", time, philo->id);
 	else if (SLEEP == action)
-		printf(CYAN"%d %d is sleeping\n", time, philo->id);
+		printf("%d %d is sleeping\n", time, philo->id);
 	else if (THINK == action)
-		printf(MAGENTA"%d %d is thinking\n", time, philo->id);
+		printf("%d %d is thinking\n", time, philo->id);
 	else if (DIED == action)
-		printf(WHITE"%d %d died\n", time, philo->id);
+		printf("%d %d died\n", time, philo->id);
 	pthread_mutex_unlock(&args->common_mutex);
 }
 
