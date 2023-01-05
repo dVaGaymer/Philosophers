@@ -6,7 +6,7 @@
 /*   By: alopez-g <alopez-g@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/17 21:34:11 by alopez-g          #+#    #+#             */
-/*   Updated: 2022/12/30 23:36:32 by alopez-g         ###   ########.fr       */
+/*   Updated: 2023/01/05 12:56:05 by alopez-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ t_error	parser_parse(int argc, char **argv, t_args *ret)
 	args.tte = str_valid(*(argv + 3), TTE, &err);
 	args.tts = str_valid(*(argv + 4), TTS, &err);
 	args.run = TRUE;
-	args.init_time = philo_get_utime();
+	args.init_time = philo_get_mstime();
 	*ret = args;
 	return (err);
 }

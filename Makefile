@@ -6,7 +6,7 @@
 #    By: alopez-g <alopez-g@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/25 01:42:35 by alopez-g          #+#    #+#              #
-#    Updated: 2022/12/30 23:17:17 by alopez-g         ###   ########.fr        #
+#    Updated: 2023/01/05 14:36:35 by alopez-g         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -36,7 +36,7 @@ LIBFT		=	$(LIBFT_DIR)/$(LIBFT_NAME)
 #----- FLAGS -----
 CC			=	gcc
 H_FLAGS		=	-I$(H_DIR) -I$(LIBFT_H_DIR)
-C_FLAGS		=	-c -Wall -Wextra -Werror -fsanitize=thread
+C_FLAGS		=	-Ofast -c -Wall -Wextra -Werror -fsanitize=thread
 LIB_FLAGS	=	-L$(LIBFT_DIR) -lft \
 				-lpthread \
 				-fsanitize=thread
@@ -59,7 +59,7 @@ $(NAME): $(filter-out obj/bonus/%.o, $(OBJ)) $(LIBFT)
 bonus: $(filter obj/bonus/%.o, $(OBJ)) $(LIBFT)
 	@echo "$(GREEN) Compilation Successfull! $(NC)"
 	@echo "$(YELLOW) Linking... $(NC)"
-	@$(CC) $(LIB_FLAGS) $(filter obj/bonus/%.o, $(OBJ)) -o $(NAME)_$@
+	@$(CC) -Ofast $(LIB_FLAGS) $(filter obj/bonus/%.o, $(OBJ)) -o $(NAME)_$@
 	@echo "$(GREEN) Ready! $(NC)"
 
 clean:

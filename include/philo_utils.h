@@ -6,7 +6,7 @@
 /*   By: alopez-g <alopez-g@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/17 22:16:26 by alopez-g          #+#    #+#             */
-/*   Updated: 2022/12/30 23:34:45 by alopez-g         ###   ########.fr       */
+/*   Updated: 2023/01/05 14:31:54 by alopez-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ pthread_mutex_t	*philo_left_fork(t_args *args,
 					pthread_mutex_t *forks, int index);
 t_philo			philo_create_philo(pthread_mutex_t *lfork,
 					pthread_mutex_t *rfork, int n);
-suseconds_t		philo_get_utime(void);
+suseconds_t		philo_get_mstime(void);
+void			ft_usleep(t_time t);
 
 #endif

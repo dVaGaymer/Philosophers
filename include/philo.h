@@ -6,7 +6,7 @@
 /*   By: alopez-g <alopez-g@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/18 18:31:52 by alopez-g          #+#    #+#             */
-/*   Updated: 2022/12/30 23:35:53 by alopez-g         ###   ########.fr       */
+/*   Updated: 2023/01/05 15:21:28 by alopez-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,21 +20,22 @@
 
 typedef struct s_args
 {
-	suseconds_t		init_time;
+	t_time			init_time;
 	t_bool			run;
 	int				nop;
-	int				ttd;
-	int				tte;
-	int				tts;
+	t_time			ttd;
+	t_time			tte;
+	t_time			tts;
 	int				notepme;
 	pthread_mutex_t	common_mutex;
+	pthread_mutex_t	*aux_mutex_list;
 }				t_args;
 
 typedef struct s_philo
 {
 	int				id;
 	int				eat_times;
-	int				time_of_last_eat;
+	t_time			time_of_last_eat;
 	pthread_t		thread;
 	pthread_mutex_t	*rfork;
 	pthread_mutex_t	*lfork;

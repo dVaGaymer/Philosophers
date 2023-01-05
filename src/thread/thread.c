@@ -6,7 +6,7 @@
 /*   By: alopez-g <alopez-g@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/19 01:14:49 by alopez-g          #+#    #+#             */
-/*   Updated: 2022/12/30 23:38:32 by alopez-g         ###   ########.fr       */
+/*   Updated: 2023/01/05 19:39:18 by alopez-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,4 +36,6 @@ void	threads_start(t_args *args, t_philo **philo)
 	n = -1;
 	while (++n < args->nop)
 		pthread_join((*philo + n)->thread, NULL);
+	free(*philo);
+	free(args->aux_mutex_list);
 }

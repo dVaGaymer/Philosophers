@@ -6,51 +6,65 @@
 /*   By: alopez-g <alopez-g@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/30 18:08:10 by alopez-g          #+#    #+#             */
-/*   Updated: 2022/12/30 23:37:43 by alopez-g         ###   ########.fr       */
+/*   Updated: 2023/01/05 19:39:33 by alopez-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "vital_functions.h"
 
-void	process_death(t_args *args, t_philo *philo, int wait_time)
+t_bool	step_wait(t_args *args, t_philo *philo, t_time t)
 {
-	int	time_since_eat;
+	t_time	time;
 
-	time_since_eat = (philo_get_utime() * US_TO_MS - philo->time_of_last_eat);
-	if (time_since_eat < 0)
-		time_since_eat = 0;
-	if (time_since_eat > args->ttd || args->ttd - time_since_eat < wait_time)
+	time = philo_get_mstime();
+	if (t < 0)
+		return (TRUE);
+	while ((philo_get_mstime() - time < t))
 	{
-		if (time_since_eat > args->ttd)
-			time_since_eat = 0;
-		usleep((args->ttd - time_since_eat) * MS_TO_US);
-		log_state(args, philo, DIED);
+		if (philo_get_mstime() - philo->time_of_last_eat > args->ttd)
+			return (FALSE);
+		usleep(MS_TO_US);
 	}
+	return (TRUE);
 }
 
-void	vital_sleep(t_args *args, t_philo *philo)
+t_bool	vital_sleep(t_args *args, t_philo *philo)
 {
 	log_state(args, philo, SLEEP);
-	process_death(args, philo, args->tts);
-	usleep(args->tts * MS_TO_US);
+	if (!step_wait(args, philo, args->tts))
+	{
+		log_state(args, philo, DIED);
+		return (mutex_args_save_access(args, FALSE));
+	}
+	return (TRUE);
 }
 
 t_bool	vital_eat(t_args *args, t_philo *philo)
 {
-	pthread_mutex_lock(philo->rfork);
-	log_state(args, philo, TAKE_RFORK);
-	pthread_mutex_lock(philo->lfork);
-	log_state(args, philo, TAKE_LFORK);
+	mutex_take_forks(args, philo);
 	log_state(args, philo, EAT);
 	philo->eat_times++;
-	process_death(args, philo, args->tte);
-	philo->time_of_last_eat = philo_get_utime() * US_TO_MS;
-	usleep(args->tte * MS_TO_US);
-	pthread_mutex_unlock(philo->lfork);
-	pthread_mutex_unlock(philo->rfork);
-	if (philo->eat_times >= args->notepme)
-		return (TRUE);
-	return (FALSE);
+	philo->time_of_last_eat = philo_get_mstime();
+	if (!step_wait(args, philo, args->tte))
+	{
+		log_state(args, philo, DIED);
+		return (mutex_args_save_access(args, FALSE));
+	}
+	mutex_leave_forks(args, philo);
+	if (philo->eat_times >= args->notepme && args->notepme)
+		return (FALSE);
+	return (TRUE);
+}
+
+t_bool	vital_think(t_args *args, t_philo *philo)
+{
+	log_state(args, philo, THINK);
+	if (!step_wait(args, philo, args->tte - args->tts))
+	{
+		log_state(args, philo, DIED);
+		return (mutex_args_save_access(args, FALSE));
+	}
+	return (TRUE);
 }
 
 void	*vital_functions(void *param)
@@ -58,18 +72,26 @@ void	*vital_functions(void *param)
 	t_args	*args;
 	t_philo	*philo;
 
-	free(param);
 	args = ((t_thread_param *)param)->args;
 	philo = ((t_thread_param *)param)->philo;
+	free(param);
+	philo->time_of_last_eat = philo_get_mstime();
 	pthread_mutex_lock(&args->common_mutex);
-	philo->time_of_last_eat = args->init_time;
-	pthread_mutex_unlock(&args->common_mutex);
-	while (args->run)
+	if (args->nop == 1)
 	{
-		usleep(SAFE_DELAY);
-		if (vital_eat(args, philo))
+		pthread_mutex_unlock(&args->common_mutex);
+		log_state(args, philo, DIED);
+		return (NULL);
+	}
+	pthread_mutex_unlock(&args->common_mutex);
+	while (TRUE)
+	{
+		if (!vital_eat(args, philo))
 			return (NULL);
-		vital_sleep(args, philo);
+		if (!vital_sleep(args, philo))
+			return (NULL);
+		if (!vital_think(args, philo))
+			return (NULL);
 	}
 	return (NULL);
 }
