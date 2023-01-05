@@ -1,37 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstdelrange_bonus.c                             :+:      :+:    :+:   */
+/*   std_utils.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alopez-g <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/27 20:58:32 by alopez-g          #+#    #+#             */
-/*   Updated: 2022/07/27 21:42:33 by alopez-g         ###   ########.fr       */
+/*   Created: 2023/01/05 20:50:26 by alopez-g          #+#    #+#             */
+/*   Updated: 2023/01/05 20:53:43 by alopez-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/libft.h"
+#ifndef STD_UTILS_H
+# define STD_UTILS_H
 
-void	ft_lstdelrange(t_list **from, t_list **to, int ton, void (*del)(void *))
-{
-	t_list	*t;
+int	ft_atoi(const char *str);
+int	ft_isdigit(int c);
+int	ft_strisdigit(char *c);
+int	ft_strisfdigit(char *c);
 
-	if (to)
-	{
-		while (from != to)
-		{
-			t = (*from)->next;
-			ft_lstdelone(from, del);
-			*from = t;
-		}
-	}
-	else if (ton)
-	{
-		while (ton--)
-		{
-			t = (*from)->next;
-			ft_lstdelone(from, del);
-			*from = t;
-		}
-	}
-}
+#endif
