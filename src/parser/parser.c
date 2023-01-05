@@ -6,7 +6,7 @@
 /*   By: alopez-g <alopez-g@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/17 21:34:11 by alopez-g          #+#    #+#             */
-/*   Updated: 2023/01/05 12:56:05 by alopez-g         ###   ########.fr       */
+/*   Updated: 2023/01/05 20:21:19 by alopez-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,9 @@ static int	str_valid(const char *str, t_philo_args_type t, int *err)
 		}
 	}
 	num = ft_atoi(str);
-	if (num <= 0)
+	if ((num <= 0)
+		|| (t != NOP && num < MIN_TIME)
+		|| (t == NOP && num > MAX_NOP))
 		error_set_error(err, t + INVALID_RANGE);
 	return (num);
 }

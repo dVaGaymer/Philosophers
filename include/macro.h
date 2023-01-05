@@ -6,7 +6,7 @@
 /*   By: alopez-g <alopez-g@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/18 11:57:18 by alopez-g          #+#    #+#             */
-/*   Updated: 2023/01/05 15:46:05 by alopez-g         ###   ########.fr       */
+/*   Updated: 2023/01/05 20:19:22 by alopez-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,8 @@ typedef enum s_bool
 # define WHITE "\e[0;37m"
 # define NC "\e[0m"
 # define SAFE_DELAY 2000
+# define MAX_NOP 200
+# define MIN_TIME 50
 
 typedef long unsigned int	t_time;
 
