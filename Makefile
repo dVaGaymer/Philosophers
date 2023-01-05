@@ -6,7 +6,7 @@
 #    By: alopez-g <alopez-g@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/25 01:42:35 by alopez-g          #+#    #+#              #
-#    Updated: 2023/01/05 20:35:53 by alopez-g         ###   ########.fr        #
+#    Updated: 2023/01/05 20:45:49 by alopez-g         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -68,27 +68,20 @@ $(LIBFT):
 	@$(MAKE) -sC $(LIBFT_DIR)
 
 $(NAME): $(filter-out obj/bonus/%.o, $(OBJ)) $(LIBFT)
-	@echo "$(GREEN) Compilation Successfull! $(NC)"
-	@echo "$(YELLOW) Linking... $(NC)"
-	@$(CC) $(LIB_FLAGS) $(filter-out obj/bonus/%.o, $(OBJ)) -o $@
-	@echo "$(GREEN) Ready! $(NC)"
+	$(CC) $(LIB_FLAGS) $(filter-out obj/bonus/%.o, $(OBJ)) -o $@
 
 bonus: $(filter obj/bonus/%.o, $(OBJ)) $(LIBFT)
-	@echo "$(GREEN) Compilation Successfull! $(NC)"
-	@echo "$(YELLOW) Linking... $(NC)"
-	@$(CC) $(LIB_FLAGS) $(filter obj/bonus/%.o, $(OBJ)) -o $(NAME)_$@
-	@echo "$(GREEN) Ready! $(NC)"
+	$(CC) $(LIB_FLAGS) $(filter obj/bonus/%.o, $(OBJ)) -o $(NAME)_$@
 
 clean:
-	@$(MAKE) clean -sC $(LIBFT_DIR)
-	@$(RM) -rf $(OBJ_DIR)
+	$(MAKE) clean -sC $(LIBFT_DIR)
+	$(RM) -rf $(OBJ_DIR)
 
 fclean: clean
-	@$(MAKE) fclean -sC $(LIBFT_DIR)
-	@$(RM) -rf $(OBJ_DIR)
-	@$(RM) $(NAME)
-	@$(RM) $(NAME)_bonus
-	@echo "$(RED) Objects removed $(NC)"
+	$(MAKE) fclean -sC $(LIBFT_DIR)
+	$(RM) -rf $(OBJ_DIR)
+	$(RM) $(NAME)
+	$(RM) $(NAME)_bonus
 
 re: fclean all
 
